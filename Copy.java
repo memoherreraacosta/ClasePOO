@@ -24,7 +24,6 @@ public class Copy{
 			rutaGuardar.setDialogTitle("Escoge el nombre del archivo a copiar");
 			rutaGuardar.showSaveDialog(null);
 			File archivo= new File(rutaGuardar.getSelectedFile()+".txt");
-
 			PrintWriter pw=new PrintWriter(new FileWriter (archivo));
 
 			String linea=bf.readLine();
@@ -45,7 +44,7 @@ public class Copy{
 			JOptionPane.showMessageDialog(null,"Ocurrio un error al leer el archivo");		
 		
 		}catch(NullPointerException e){
-			JOptionPane.showMessageDialog(null,"Se ha cerrado la ventana sin escoger archivo a guardar o cepiar");
+			JOptionPane.showMessageDialog(null,"Se ha cerrado la ventana sin escoger archivo a guardar o copiar");
 		}
 
 	}

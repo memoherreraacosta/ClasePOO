@@ -1,4 +1,6 @@
-public class Naipe{
+
+public class Naipe {
+	
 	private int valor;
 	private int palo;
 	private static final String [] valores={"As","Dos","Tres","Cuatro",
@@ -20,7 +22,7 @@ public class Naipe{
 	}
 
 	public static void main(String []args){
-		Naipe carta= new Naipe(0,0);
+		Naipe carta= new Naipe(11,2);
 		System.out.println(carta);
 	}
 }

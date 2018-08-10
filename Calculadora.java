@@ -1,3 +1,4 @@
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -11,12 +12,12 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
- 
+
 public class Calculadora implements ActionListener{
- 
-    JTextField jt1, jt2;
-    Panel pN, pb1, pb3;
-    JPanel pS, pb2;
+	
+	Panel pN, pb1, pb3;
+	JPanel pS, pb2;
+	JTextField jt1, jt2;
     JButton mc, mr, ms, mMas, mMenos, numeros[], operaciones[];
     String oper[]={"R", "C", "+", "/", "-" ,"*", "="},  ax="";
     float n1, n2, nr, M;//variables para las operaciones
@@ -37,7 +38,7 @@ public class Calculadora implements ActionListener{
         jfMain.setLocation(500,300);
         jfMain.setResizable(false);
         jfMain.setVisible(true);
-        jfMain.setSize(300, 380);
+        jfMain.setSize(300, 260);
         jfMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
  
@@ -87,11 +88,11 @@ public class Calculadora implements ActionListener{
  
         pS.setSize(270, 330);
     }
-    
+ 
     public void botMem(){
  
         pb1 = new Panel(null);
-    
+ 
         mc = new JButton("MC");  mr = new JButton("MR");
         ms = new JButton("MS"); mMas = new JButton("M+");
         mMenos = new JButton("M-");
@@ -109,15 +110,16 @@ public class Calculadora implements ActionListener{
         mc.setBounds(35, 0, 33, 33); mr.setBounds(78, 0, 33, 33); ms.setBounds(121, 0, 33, 33);
         mMas.setBounds(164, 0, 33, 33); mMenos.setBounds(207, 0, 33, 33);
  
-        //pb1.add(mc); pb1.add(mr); pb1.add(ms); pb1.add(mMas); pb1.add(mMenos);
+        /*pb1.add(mc); pb1.add(mr); pb1.add(ms); pb1.add(mMas); pb1.add(mMenos);
  
-       // mc.addActionListener(this); mr.addActionListener(this); ms.addActionListener(this);
-       // mMas.addActionListener(this); mMenos.addActionListener(this);
+        mc.addActionListener(this); mr.addActionListener(this); ms.addActionListener(this);
+        mMas.addActionListener(this); mMenos.addActionListener(this);
  
         pb1.setSize(270, 45);
-        pb1.setVisible(true);        
+        pb1.setVisible(true);
+        */        
     }
-    
+ 
     public void botNum(){
  
         pb2 = new JPanel(null);
@@ -285,24 +287,6 @@ public class Calculadora implements ActionListener{
             if(e.getActionCommand().equals("C") ){ //para reiniciar valores y limpiar pantalla
                 tipOp=0; n1 = 0; n2 =0; nr=0; jt1.setText(""); jt2.setText("0"); ax="";
             }   
-            if(e.getActionCommand().equals("MC")){//para limpiar la memoria de la calculadora
-                ms.setForeground(Color.black);
-                jt1.setText(""); jt2.setText("0");
-                M=0;
-            }
-            if(e.getActionCommand().equals("MR")){//para mostrar valor almacenado en la memoria
-                jt1.setText("");
-                jt2.setText(String.valueOf(M));
-            }if(e.getActionCommand().equals("MS")){//guardar un valor en la memoria
-                ms.setForeground(Color.red);
-                M = Float.parseFloat(jt2.getText());
-            }
-            if(e.getActionCommand().equals("M+")){//sumar valor de la pantalla con el valor de la memoria
-                M += Float.parseFloat(jt2.getText());
-            }
-            if(e.getActionCommand().equals("M-")){//restar valor de la pantalla con el valor de la memoria
-                M -= Float.parseFloat(jt2.getText());
-            }    
             if(e.getActionCommand().equals(".")){//usar el punto para los decimales
                 ax="";
                 if(numeros[10].isEnabled()){
@@ -481,6 +465,7 @@ public class Calculadora implements ActionListener{
         }        
     }   
     public static void main(String[]args){
-        Calculadora i=new Calculadora();
+        Calculadora calculadora=new Calculadora();
     }    
+
 }
