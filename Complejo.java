@@ -29,35 +29,19 @@ public class Complejo {
 		this.imaginario+=x.imaginario;
 	}
 	public Complejo suma(Complejo x){
-		Complejo c= new Complejo((this.real+x.real),(this.imaginario+x.imaginario));
-		return c;
+		return new Complejo((this.real+x.real),(this.imaginario+x.imaginario));
 	}
 	public Complejo resta(Complejo x){
-		Complejo c= new Complejo((this.real-x.real),(this.imaginario-x.imaginario));
-		
-		return c;
+		return new Complejo((this.real-x.real),(this.imaginario-x.imaginario));
 	}
 	public Complejo multiplicacion(Complejo x){
-		Complejo c= new Complejo((this.real*x.real),(this.imaginario*x.imaginario));
-		
-		return c;
+		return new Complejo((this.real*x.real),(this.imaginario*x.imaginario));
+
 	}
 	public Complejo multiplicacion(double real, double imaginario){
-		Complejo c= new Complejo((this.real*real),(this.imaginario*imaginario));
-		
-		return c;
+		return new Complejo((this.real*real),(this.imaginario*imaginario));
 	}
 	public Complejo conjugado(){
-		Complejo c= new Complejo((this.real),(this.imaginario));
-		
-		return c;
-	}
-	
-	public static void main(String[]args){
-		
+		return new Complejo((this.real),(this.imaginario));
 	}
 }
-
-
-
-
